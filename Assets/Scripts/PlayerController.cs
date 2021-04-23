@@ -8,54 +8,39 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController player;
-    public string xAxisLeft = "Horizontal";
-    public string yAxisLeft = "Vertical";
-    public string xAxisRight = "Horizontal";
-    public string yAxisRight = "Vertical";
-    public Transform gun;
+    public string xAxis = "Horizontal";
+    public string yAxis = "Vertical";
     CharacterMotor motor;
-    public ProjectileSpawner bullets;
-    public float fireDelay = 0.5f;
-    public float bulletSpeed = 40;
-    float lastFire;
-    public ParticleSystem deathExplosion;
-    public GameObject playerVisuals;
+    GunController[] guns;
+    public float lookInfluence = 2;
+    Camera cam;
 
     void Awake()
     {
         player = this;
         motor = GetComponent<CharacterMotor>();
+        guns = GetComponentsInChildren<GunController>();
+        cam = Camera.main;
         //GetComponent<Animator>().Play("PlayerStart");
     }
     void Update()
     {
-        float x = Input.GetAxisRaw(xAxisLeft);
-        float z = Input.GetAxisRaw(yAxisLeft);
-        motor.dir = new Vector3(x,0,z).normalized;
-        if (xAxisLeft != xAxisRight) UpdateRightStick();
+        float x = Input.GetAxisRaw(xAxis);
+        float z = Input.GetAxisRaw(yAxis);
+        motor.moveDir = new Vector3(x,0,z).normalized;
+        UpdateMouse();
     }
 
-    void UpdateRightStick()
+    void UpdateMouse()
     {
-        float x = Input.GetAxisRaw(xAxisRight);
-        float z = Input.GetAxisRaw(yAxisRight);
-        motor.lookDir = new Vector3(x,0,z);
-
-        float dot = Vector3.Dot(motor.lookDir, transform.forward);
-
-        if (dot > 0.9f && Time.time - lastFire > fireDelay && motor.lookDir.sqrMagnitude> 0.25f)
-        { 
-            bullets.Fire(gun.position, gun.forward * bulletSpeed);
-            lastFire = Time.time;
+        Vector3 pos = cam.WorldToScreenPoint(transform.position);
+        Vector3 diff  = Input.mousePosition - pos;
+        Vector3 dir = new Vector3(diff.x,0,diff.y).normalized;
+        motor.lookDir = dir;
+        bool shouldFire = Input.GetMouseButtonDown(0);
+        for (int i = 0;i < guns.Length; i ++)
+        {
+            guns[i].shouldFire = shouldFire;
         }
-    }
-
-    public void Death()
-    {
-        motor.enabled = false;
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
-        GetComponent<SphereCollider>().enabled = false;
-        deathExplosion.Play();
-        //GameManager.Death();
     }
 }

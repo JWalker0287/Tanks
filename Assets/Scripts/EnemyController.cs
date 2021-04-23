@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         
-        motor.dir = (PlayerController.player.transform.position - transform.position).normalized;
+        motor.moveDir = (PlayerController.player.transform.position - transform.position).normalized;
       
     }
 
@@ -26,9 +26,6 @@ public class EnemyController : MonoBehaviour
     {
         PlayerController p = c.gameObject.GetComponent<PlayerController>();
         if (p == null) return;
-
-        PlayerController.player.Death();
-
     }
 }
     

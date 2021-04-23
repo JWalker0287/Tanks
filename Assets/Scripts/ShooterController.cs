@@ -17,13 +17,6 @@ public class ShooterController : MonoBehaviour
     {
         chaseDistSq = chaseDist * chaseDist;
         motor = GetComponent<CharacterMotor>();
-        //gun = GetComponentInChildren<GunController>();
-        //if (bullets = null)
-        //{
-            GameObject g = GameObject.Find("EnemyBullets");
-            bullets = g.GetComponent<ProjectileSpawner>();
-        //}
-        gun.bullets = bullets;
     }
 
     void OnEnable()
@@ -38,11 +31,11 @@ public class ShooterController : MonoBehaviour
         float distSq = diff.sqrMagnitude;
         if (distSq > chaseDistSq)
         {
-            motor.dir = diff.normalized;
+            motor.moveDir = diff.normalized;
         }
         else
         {
-            motor.dir *= 0.9f;
+            motor.moveDir *= 0.9f;
         }
         gun.shouldFire = distSq < shotDist * shotDist;
         motor.lookDir = diff;

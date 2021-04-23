@@ -16,7 +16,7 @@ public class BulletController : MonoBehaviour
         PlayerController p = c.gameObject.GetComponent<PlayerController>();
         if (p != null)
         {
-            PlayerController.player.Death();
+            //PlayerController.player.Death();
         }
     }
     IEnumerator LifeCoroutine()
