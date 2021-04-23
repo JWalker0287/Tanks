@@ -5,16 +5,16 @@ using UnityEngine;
 public class TankController : MonoBehaviour
 {
     public float speed = 10;
-    Material leftTread;
-    Material rightTread;
+    //Material leftTread;
+    //Material rightTread;
     CharacterMotor motor;
     public Renderer treads;
 
     void Awake()
     {
         motor = GetComponent<CharacterMotor>();
-        leftTread = treads.materials[1];
-        rightTread = treads.materials[2];
+        //leftTread = treads.materials[1];
+        //rightTread = treads.materials[2];
     }
 
     void Update()
@@ -33,7 +33,7 @@ public class TankController : MonoBehaviour
             right = -cross;
         }
 
-        leftTread.mainTextureOffset += Vector2.right * left * Time.deltaTime * speed;
-        rightTread.mainTextureOffset += Vector2.right * right * Time.deltaTime * speed;
+        //leftTread.mainTextureOffset += Vector2.right * left * Time.deltaTime * speed;
+        //rightTread.mainTextureOffset += Vector2.right * right * Time.deltaTime * speed;
     }
 }

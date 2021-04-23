@@ -4,19 +4,33 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
+    public int maxBounces = 1;
     public float lifeTime = 5;
+    int bounces = 0;
 
     void OnEnable()
     {
         StartCoroutine(LifeCoroutine());
     }
-    void OnTriggerEnter(Collider c)
+
+    void OnCollisionEnter(Collision c)
     {
-        gameObject.SetActive(false);
+        bounces ++;
+
+        TankController tank = c.gameObject.GetComponent<TankController>();
+        BulletController bullet = c.gameObject.GetComponent<BulletController>();
+        ExplosionController explosion = c.gameObject.gameObject.GetComponent<ExplosionController>();
+
         PlayerController p = c.gameObject.GetComponent<PlayerController>();
-        if (p != null)
+        if (bounces > maxBounces || tank != null || bullet != null || explosion != null)
         {
-            //PlayerController.player.Death();
+            gameObject.SetActive(false);
+            StopAllCoroutines();
+            //ParticalMAnager.Play("Explosion", transform.position);
+        }
+        else
+        {
+            //AudioManager.PlayVaried('bounce');
         }
     }
     IEnumerator LifeCoroutine()
