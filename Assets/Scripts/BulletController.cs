@@ -24,6 +24,7 @@ public class BulletController : MonoBehaviour
         PlayerController p = c.gameObject.GetComponent<PlayerController>();
         if (bounces > maxBounces || tank != null || bullet != null || explosion != null)
         {
+            bounces = 0;
             gameObject.SetActive(false);
             StopAllCoroutines();
             //ParticalMAnager.Play("Explosion", transform.position);
@@ -36,6 +37,7 @@ public class BulletController : MonoBehaviour
     IEnumerator LifeCoroutine()
     {
         yield return new WaitForSeconds(lifeTime);
+        bounces = 0;
         gameObject.SetActive(false);
     }
 }

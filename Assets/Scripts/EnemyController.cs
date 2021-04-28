@@ -17,11 +17,6 @@ public class EnemyController : MonoBehaviour
       
     }
 
-    void OnEnable()
-    {
-        GetComponent<Animator>().Play("EnemySpawn");
-    }
-
     void OnCollisionEnter(Collision c)
     {
         PlayerController p = c.gameObject.GetComponent<PlayerController>();
