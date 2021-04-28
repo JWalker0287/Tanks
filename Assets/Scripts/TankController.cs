@@ -36,4 +36,17 @@ public class TankController : MonoBehaviour
         //leftTread.mainTextureOffset += Vector2.right * left * Time.deltaTime * speed;
         //rightTread.mainTextureOffset += Vector2.right * right * Time.deltaTime * speed;
     }
+    void OnCollisionEnter(Collision c)
+    {
+        BulletController bullet = c.gameObject.GetComponentInChildren<BulletController>();
+        if (bullet == null) return;
+        StartCoroutine(Death());
+    }
+
+    IEnumerator Death()
+    {
+        ParticleManager.Play("TankExplode", transform.position);
+        yield return new WaitForSeconds(0.2f);
+        gameObject.SetActive(false);
+    }
 }

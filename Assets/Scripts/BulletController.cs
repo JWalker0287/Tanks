@@ -27,7 +27,7 @@ public class BulletController : MonoBehaviour
             bounces = 0;
             gameObject.SetActive(false);
             StopAllCoroutines();
-            //ParticalMAnager.Play("Explosion", transform.position);
+            ParticleManager.Play("BulletExplode", transform.position);
         }
         else
         {
