@@ -9,8 +9,8 @@ public class Aiming : MonoBehaviour
         Player
     }
     public AimType aimType = AimType.Player;
-    public float lastAimTime;
-    float aimInterval = 3;
+    public float aimInterval = 3;
+    float lastAimTime;
     public int sweepIterations = 36;
     
     CharacterMotor motor;
@@ -18,6 +18,7 @@ public class Aiming : MonoBehaviour
     TankController tank;
     void Awake ()
     {
+        tank = GetComponent<TankController>();
         motor = GetComponent<CharacterMotor>();
         gun = GetComponentInChildren<GunController>();
         lastAimTime = Time.time - Random.Range(0,aimInterval);
@@ -28,9 +29,10 @@ public class Aiming : MonoBehaviour
         switch(aimType)
         {
             case AimType.Player:
-                UpdatePlayer();
+                UpdateAimAtPlayer();
                 break;
             case AimType.Random:
+                UpdateAimRandom();
                 break;
             default:
                 Debug.LogError("Shouldn't be here.");
@@ -39,10 +41,9 @@ public class Aiming : MonoBehaviour
         FireAtPlayer();
     }
 
-    void UpdatePlayer()
+    void UpdateAimAtPlayer()
     {
-        Vector3 diff = PlayerController.player.transform.position - transform.position;
-                motor.lookDir = diff.normalized;
+        if(Sweep(out Vector3 dir)) motor.lookDir = dir;
     }
 
     void UpdateAimRandom()
@@ -55,15 +56,10 @@ public class Aiming : MonoBehaviour
             motor.lookDir = dir.normalized;
         }
     }
+
     void FireAtPlayer ()
     {
-        RaycastHit hit;
-        if (Physics.SphereCast(gun.transform.position, 0.2f, gun.transform.forward, out hit))
-        {
-            Debug.Log(hit.collider);
-            TankController tank = hit.collider.GetComponentInParent<TankController>();
-            gun.shouldFire = (tank != null);
-        }
+        gun.shouldFire = CanHitPlayer(gun.transform.position, gun.transform.forward);
     }
 
     bool Sweep (out Vector3 dir)
@@ -101,4 +97,13 @@ public class Aiming : MonoBehaviour
         }
         return false;
     }
+    //void OnDrawGizmos ()
+    //{
+    //    Vector3 dir = gun.transform.forward;
+    //    Vector3 pos = gun.transform.position;
+    //    if (Physics.SphereCast(pos,0.2f,dir,out RaycastHit hit))
+    //    {
+    //        Gizmos.DrawLine(pos,hit.point);
+    //    }
+    //}
 }

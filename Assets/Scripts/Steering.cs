@@ -18,7 +18,7 @@ public class Steering : MonoBehaviour
             Vector3 p = PlayerController.player.transform.position;
             NavMesh.CalculatePath(transform.position, p, NavMesh.AllAreas, path);
             index = 0;
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1);
         }
     }
 

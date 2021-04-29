@@ -46,6 +46,7 @@ public class TankController : MonoBehaviour
     IEnumerator Death()
     {
         ParticleManager.Play("TankExplode", transform.position);
+        AudioManager.PlayVaried("Explosion");
         yield return new WaitForSeconds(0.2f);
         gameObject.SetActive(false);
     }

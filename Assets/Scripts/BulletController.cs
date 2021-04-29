@@ -28,10 +28,11 @@ public class BulletController : MonoBehaviour
             gameObject.SetActive(false);
             StopAllCoroutines();
             ParticleManager.Play("BulletExplode", transform.position);
+            AudioManager.PlayVaried("explosion_dull");
         }
         else
         {
-            //AudioManager.PlayVaried('bounce');
+            AudioManager.PlayVaried("thud2");
         }
     }
     IEnumerator LifeCoroutine()

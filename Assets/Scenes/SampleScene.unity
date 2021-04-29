@@ -385,8 +385,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935a56ab472378e4fb07c3cfa8c2af5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimType: 1
-  lastAimTime: 0
+  aimType: 0
+  aimInterval: 3
   sweepIterations: 36
 --- !u!1 &134649342
 GameObject:
@@ -433,9 +433,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 7501625987573345044, guid: 90da21df1acf0654695c6e29d0d44bad, type: 3}
   maxShots: 6
-  fireSound: launch
+  fireSound: explosion_01
   fireDelay: 0.4
-  bulletSpeed: 100
+  bulletSpeed: 56.08
   shouldFire: 0
 --- !u!1001 &144052397
 PrefabInstance:
@@ -719,7 +719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 7501625987573345044, guid: 90da21df1acf0654695c6e29d0d44bad, type: 3}
   maxShots: 6
-  fireSound: launch
+  fireSound: explosion_01
   fireDelay: 0.1
   bulletSpeed: 1000
   shouldFire: 0
@@ -1630,6 +1630,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fff36d2eafd3dc34b82533fd6883539c, type: 3}
   - {fileID: 8300000, guid: 69a8b6a9b47a95744b2873fd40dec65c, type: 3}
   - {fileID: 8300000, guid: cfdda3e1b6fc7774a90beac8e872ac35, type: 3}
+  - {fileID: 8300000, guid: 693c7e9e90b929e43883532aa006b775, type: 3}
+  - {fileID: 8300000, guid: 28dafebdfffaf3b49890e01a0a175873, type: 3}
   poolSize: 10
 --- !u!114 &778428394
 MonoBehaviour:

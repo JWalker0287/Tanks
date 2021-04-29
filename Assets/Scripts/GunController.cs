@@ -43,7 +43,7 @@ public class GunController : MonoBehaviour
             bullet.transform.position = transform.position;
             bullet.gameObject.SetActive(true);
             body.velocity = transform.forward * bulletSpeed;
-            //AudioManager.PlayVaried(fireSound);
+            AudioManager.PlayVaried(fireSound);
             lastFire = Time.time;
             
         }
