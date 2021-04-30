@@ -84,8 +84,8 @@ public class Aiming : MonoBehaviour
 
     bool CanHitPlayer (Vector3 pos, Vector3 dir)
     {
-        //for (int bounces = gun.bulletPrefab.maxBounces; bounces >= 0; bounces--)
-        //{
+        for (int bounces = gun.bulletPrefab.maxBounces; bounces >= 0; bounces--)
+        {
             if (Physics.SphereCast(pos, 0.2f, dir, out RaycastHit hit))
             {
                 TankController tank = hit.collider.GetComponentInParent<TankController>();
@@ -94,10 +94,10 @@ public class Aiming : MonoBehaviour
                     //Debug.Log(bounces + " - " + tank);
                     return true;
                 }
-                //pos = hit.point;
-                //dir = Vector3.Reflect(dir, hit.normal);
+                pos = hit.point;
+                dir = Vector3.Reflect(dir, hit.normal);
             }
-        //}
+        }
         return false;
     }
     //void OnDrawGizmos ()

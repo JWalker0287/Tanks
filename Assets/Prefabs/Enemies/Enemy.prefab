@@ -232,8 +232,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157795107170670855}
-  m_LocalRotation: {x: 0.7057492, y: 0.00004640132, z: 0.000050639286, w: 0.7084618}
-  m_LocalPosition: {x: -0, y: 0.03, z: 0.779}
+  m_LocalRotation: {x: -0.0019182866, y: -0.0000029967182, z: 0.00006861835, w: 0.99999815}
+  m_LocalPosition: {x: 0.00000001512126, y: 0.03000009, z: 0.7789999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7782566305507697282}
@@ -255,7 +255,7 @@ MonoBehaviour:
   maxShots: 6
   fireSound: explosion_01
   fireDelay: 0.4
-  bulletSpeed: 56.08
+  bulletSpeed: 3
   shouldFire: 0
 --- !u!1001 &157795106305003005
 PrefabInstance:
