@@ -8847,6 +8847,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 157795106965564307, guid: 7d39a47030afae74aa34e8d519ac6d5f, type: 3}
+      propertyPath: aimType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 157795106965564317, guid: 7d39a47030afae74aa34e8d519ac6d5f, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -8917,6 +8921,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8527733369786719914, guid: f44efa184230a9442a5049a9eaff4b86, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 7501625987573345044, guid: 90da21df1acf0654695c6e29d0d44bad, type: 3}
     - target: {fileID: 8527733369915198874, guid: f44efa184230a9442a5049a9eaff4b86, type: 3}
       propertyPath: m_RootOrder
       value: 2

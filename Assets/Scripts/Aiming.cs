@@ -26,6 +26,7 @@ public class Aiming : MonoBehaviour
 
     void Update()
     {
+        FireAtPlayer();
         switch(aimType)
         {
             case AimType.Player:
@@ -38,12 +39,14 @@ public class Aiming : MonoBehaviour
                 Debug.LogError("Shouldn't be here.");
                 break;
         }
-        FireAtPlayer();
     }
 
     void UpdateAimAtPlayer()
     {
-        if(Sweep(out Vector3 dir)) motor.lookDir = dir;
+        if(Sweep(out Vector3 dir)) 
+        {
+            motor.lookDir = dir;
+        }
     }
 
     void UpdateAimRandom()
@@ -81,20 +84,20 @@ public class Aiming : MonoBehaviour
 
     bool CanHitPlayer (Vector3 pos, Vector3 dir)
     {
-        for (int bounces = gun.bulletPrefab.maxBounces; bounces >= 0; bounces--)
-        {
+        //for (int bounces = gun.bulletPrefab.maxBounces; bounces >= 0; bounces--)
+        //{
             if (Physics.SphereCast(pos, 0.2f, dir, out RaycastHit hit))
             {
                 TankController tank = hit.collider.GetComponentInParent<TankController>();
                 if (tank != null) 
                 {
-                    Debug.Log(bounces + " - " + tank);
-                    return (tank != this.tank);
+                    //Debug.Log(bounces + " - " + tank);
+                    return true;
                 }
-                pos = hit.point;
-                dir = Vector3.Reflect(dir, hit.normal);
+                //pos = hit.point;
+                //dir = Vector3.Reflect(dir, hit.normal);
             }
-        }
+        //}
         return false;
     }
     //void OnDrawGizmos ()
