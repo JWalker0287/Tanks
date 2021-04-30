@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2534859105577385275}
   - component: {fileID: 2534859105577385274}
   - component: {fileID: 2534859105577385273}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BrownTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 2534859105729713403}
   - component: {fileID: 2534859105729713402}
   - component: {fileID: 2534859105729713401}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TankCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2534859106206082941}
   - component: {fileID: 2534859106206082942}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,10 +251,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889935474f1bd744a93c4412fb175531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 7501625987573345044, guid: 90da21df1acf0654695c6e29d0d44bad, type: 3}
-  maxShots: 6
+  bulletPrefab: {fileID: 7501625987573345044, guid: 88e766f80c304404ba7fde190b3fa13f, type: 3}
+  maxShots: 4
   fireSound: explosion_01
-  fireDelay: 0.4
+  fireDelay: 0.8
   bulletSpeed: 3
   shouldFire: 0
 --- !u!1001 &2534859106275300857
@@ -331,6 +331,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eef8a519f2e7ffc4ba28e4cf36e5bdd8, type: 3}
       propertyPath: m_Name
       value: Tank
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eef8a519f2e7ffc4ba28e4cf36e5bdd8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 951636146637939270, guid: eef8a519f2e7ffc4ba28e4cf36e5bdd8, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7940306847455457151, guid: eef8a519f2e7ffc4ba28e4cf36e5bdd8, type: 3}
       propertyPath: m_LocalPosition.x

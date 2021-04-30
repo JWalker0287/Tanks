@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5699705745561806619}
   - component: {fileID: 5699705745561806618}
   - component: {fileID: 5699705745561806617}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: TankExplode
   m_TagString: Untagged
   m_Icon: {fileID: 0}

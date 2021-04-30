@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 157795106505802944}
   - component: {fileID: 157795106505802945}
   - component: {fileID: 157795106505802958}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TankCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 157795106965564316}
   - component: {fileID: 157795106965564319}
   - component: {fileID: 157795106965564307}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 157795107170670854}
   - component: {fileID: 157795107170671353}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,6 +331,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eef8a519f2e7ffc4ba28e4cf36e5bdd8, type: 3}
       propertyPath: m_Name
       value: Tank
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eef8a519f2e7ffc4ba28e4cf36e5bdd8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 951636146637939270, guid: eef8a519f2e7ffc4ba28e4cf36e5bdd8, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7940306847455457151, guid: eef8a519f2e7ffc4ba28e4cf36e5bdd8, type: 3}
       propertyPath: m_LocalPosition.x
