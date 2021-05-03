@@ -89,7 +89,7 @@ public class Aiming : MonoBehaviour
             if (Physics.SphereCast(pos, 0.2f, dir, out RaycastHit hit))
             {
                 TankController tank = hit.collider.GetComponentInParent<TankController>();
-                if (tank != null && tank != this) 
+                if (tank != null && tank.team != GetComponent<TankController>().team) 
                 {
                     //Debug.Log(bounces + " - " + tank);
                     return true;

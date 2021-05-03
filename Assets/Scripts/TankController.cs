@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class TankController : MonoBehaviour
 {
+    public int team = 1;
     public float speed = 10;
     //Material leftTread;
     //Material rightTread;
     CharacterMotor motor;
     public Renderer treads;
+    TankController tank;
 
     void Awake()
     {
+        tank = GetComponent<TankController>();
         motor = GetComponent<CharacterMotor>();
         //leftTread = treads.materials[1];
         //rightTread = treads.materials[2];
@@ -49,5 +52,6 @@ public class TankController : MonoBehaviour
         AudioManager.PlayVaried("Explosion");
         yield return new WaitForSeconds(0.2f);
         gameObject.SetActive(false);
+        GameManager.TankDestroyed(tank);
     }
 }
