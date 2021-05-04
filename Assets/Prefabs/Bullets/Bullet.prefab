@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxBounces: 1
-  lifeTime: 5
+  lifeTime: 10
 --- !u!199 &8999263926401262362
 ParticleSystemRenderer:
   serializedVersion: 6
