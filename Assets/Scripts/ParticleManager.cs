@@ -13,7 +13,7 @@ public class ParticleManager : MonoBehaviour
 
     void Awake () 
     {
-        manager = this;
+        if (manager == null) manager = this;
         WarmPool();
     }
 

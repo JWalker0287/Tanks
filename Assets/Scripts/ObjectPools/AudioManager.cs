@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
 
     void Awake () 
     {
-        manager = this;
+        if (manager == null) manager = this;
         WarmPool();
 
         for (int i = 0; i < clips.Length; i++)

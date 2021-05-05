@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
             if (game.lives == 0)
             {
                 game.lives = 3;
+                game.tanksDestroyed = 0;
                 game.currentLevel = 1;
             }
             game.LoadLevel();
