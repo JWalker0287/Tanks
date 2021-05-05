@@ -7,6 +7,11 @@ public class BulletController : MonoBehaviour
     public int maxBounces = 1;
     public float lifeTime = 5;
     int bounces = 0;
+    Rigidbody body;
+    void Awake()
+    {
+        body = GetComponent<Rigidbody>();
+    }
 
     void OnEnable()
     {
@@ -16,6 +21,7 @@ public class BulletController : MonoBehaviour
     void OnCollisionEnter(Collision c)
     {
         bounces ++;
+        transform.forward = body.velocity.normalized;
 
         TankController tank = c.gameObject.GetComponent<TankController>();
         BulletController bullet = c.gameObject.GetComponent<BulletController>();
