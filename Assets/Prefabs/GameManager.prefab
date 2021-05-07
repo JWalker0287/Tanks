@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 6048758181318856277}
   - component: {fileID: 6048758181318856276}
   - component: {fileID: 6048758181318856273}
+  - component: {fileID: 8159952549595043059}
   - component: {fileID: 6048758181318856278}
   - component: {fileID: 6048758181318856279}
   m_Layer: 0
@@ -395,6 +396,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: 0f0c199907da9e742b7006e2d39ca0bc, type: 3}
   crossFadeDuration: 1
+--- !u!114 &8159952549595043059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6048758181318856282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14f91113e208614ea8d78a73cbc4bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 2715421726846545065, guid: 8ce24c17d35f6f54590d11446860aefe, type: 3}
+  - {fileID: 265549527716095039, guid: b46da5e2bd749c04996dae5e442fe2e7, type: 3}
+  poolSize: 100
 --- !u!114 &6048758181318856278
 MonoBehaviour:
   m_ObjectHideFlags: 0

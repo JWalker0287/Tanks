@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
                 game.tanksDestroyed = 0;
                 game.currentLevel = 1;
             }
-            game.LoadLevel();
+            game.WaitAndLoadLevel();
         }
         else
         {
@@ -43,14 +43,30 @@ public class GameManager : MonoBehaviour
 
                 game.currentLevel %= game.totalLevels;
                 game.currentLevel ++;
-                game.LoadLevel();
+                game.WaitAndLoadLevel();
             }
         }
         game.UpdateText();
     }
+    
+    void WaitAndLoadLevel()
+    {
+        StartCoroutine(WaitAndLoadLevelCoroutine());
+    }
+
+    IEnumerator WaitAndLoadLevelCoroutine()
+    {
+        Time.timeScale = 0.5f;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
+        yield return new WaitForSecondsRealtime(2);
+        LoadLevel();
+        Time.timeScale = 1;
+        Time.fixedDeltaTime = 0.02f;
+    }
 
     void LoadLevel()
     {
+        Spawner.DisableAll();
         SceneManager.LoadScene("Level" + currentLevel.ToString());
     }
 

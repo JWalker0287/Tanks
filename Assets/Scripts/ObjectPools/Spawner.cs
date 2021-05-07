@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
 
     void Awake()
     {
-        spawner = this;
+        if (spawner == null) spawner = this;
         FillPools();
     }
     void FillPools()
@@ -32,6 +32,17 @@ public class Spawner : MonoBehaviour
             pool.Add(g);
             g.gameObject.SetActive(false);
             g.transform.SetParent(transform);
+        }
+    }
+    public static void DisableAll()
+    {
+        for (int i = 0; i < spawner.prefabs.Length; i ++)
+        {
+            for (int j = 0; j < spawner.pools[i].Count; j ++)
+            {
+                GameObject g = spawner.pools[i][j];
+                g.SetActive(false);
+            }
         }
     }
 
@@ -63,7 +74,18 @@ public class Spawner : MonoBehaviour
     public static GameObject Spawn(string name, Vector3 pos)
     {
         GameObject g = Spawn(name);
+        if (g == null) return null;
         g.transform.position = pos;
+        g.SetActive(true);
+        return g;
+    }
+
+    public static GameObject Spawn(string name, Vector3 pos, Quaternion rot)
+    {
+        GameObject g = Spawn(name);
+        if (g == null) return null;
+        g.transform.position = pos;
+        g.transform.rotation = rot;
         g.SetActive(true);
         return g;
     }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5608727539119674198}
   - component: {fileID: 5608727539119674202}
   m_Layer: 7
-  m_Name: GreenTank
+  m_Name: TealTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,10 +158,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889935474f1bd744a93c4412fb175531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 7501625987573345044, guid: 055d9d8bd076ee14c9323f7490f37de9, type: 3}
+  bulletPrefab: {fileID: 7501625987573345044, guid: c422d4533995cf845bbaea90ea5fde66, type: 3}
   maxShots: 1
   fireSound: explosion_01
-  fireDelay: 3
+  fireDelay: 2
   bulletSpeed: 7
   shouldFire: 0
 --- !u!1 &5608727540748598277
@@ -326,11 +326,11 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: eef8a519f2e7ffc4ba28e4cf36e5bdd8, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 5cecb3a568ed4ca42bf029328aecf703, type: 2}
+      objectReference: {fileID: 2100000, guid: 4b593c79b3c19ac439212a86fcca8b50, type: 2}
     - target: {fileID: -4795160085687874365, guid: eef8a519f2e7ffc4ba28e4cf36e5bdd8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5cecb3a568ed4ca42bf029328aecf703, type: 2}
+      objectReference: {fileID: 2100000, guid: 4b593c79b3c19ac439212a86fcca8b50, type: 2}
     - target: {fileID: 919132149155446097, guid: eef8a519f2e7ffc4ba28e4cf36e5bdd8, type: 3}
       propertyPath: m_Name
       value: Tank
