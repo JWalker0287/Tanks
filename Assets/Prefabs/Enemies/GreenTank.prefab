@@ -68,6 +68,7 @@ MonoBehaviour:
   lookDir: {x: 0, y: 0, z: 0}
   speed: 1.56
   turnSpeed: 3
+  lookSpeed: 2
   maxVelocityChange: 1
   moveRoot: {fileID: 5358309964910711519}
   lookRoot: {fileID: 2587195911719492171}
@@ -97,7 +98,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5608727539119674196}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e5dda9a60882d9408709dd611aebcc6, type: 3}
+  m_Script: {fileID: 11500000, guid: 4beff1f3854051046b32969cd1816329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &5608727539119674202

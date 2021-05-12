@@ -4978,6 +4978,7 @@ MonoBehaviour:
   lookDir: {x: 0, y: 0, z: 0}
   speed: 2
   turnSpeed: 10
+  lookSpeed: 40
   maxVelocityChange: 1
   moveRoot: {fileID: 8201654344642633230}
   lookRoot: {fileID: 1759002359052424858}
@@ -5009,8 +5010,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 0
-  speed: 10
+  treadSpeed: 10
   treads: {fileID: 0}
+  trackDist: 0.25
+  trackRot: 15
 --- !u!1 &8527733370000683180
 GameObject:
   m_ObjectHideFlags: 0

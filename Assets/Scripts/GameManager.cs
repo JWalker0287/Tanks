@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public float sloMoTimeScale = 0.1f;
     public static GameManager game;
     public Text livesText;
     public Text levelText;
@@ -56,7 +57,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaitAndLoadLevelCoroutine()
     {
-        Time.timeScale = 0.5f;
+        Time.timeScale = sloMoTimeScale;
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
         yield return new WaitForSecondsRealtime(2);
         LoadLevel();

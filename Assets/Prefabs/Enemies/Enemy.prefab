@@ -164,6 +164,7 @@ MonoBehaviour:
   lookDir: {x: 0, y: 0, z: 0}
   speed: 1.56
   turnSpeed: 10
+  lookSpeed: 10
   maxVelocityChange: 1
   moveRoot: {fileID: 412678244671138326}
   lookRoot: {fileID: 7782566305507697282}
@@ -179,8 +180,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ca040ab13bd34fbfa44e694c48f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  team: 1
+  treadSpeed: 10
   treads: {fileID: 0}
+  trackDist: 0.25
+  trackRot: 15
 --- !u!114 &157795106965564319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +194,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 157795106965564317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e5dda9a60882d9408709dd611aebcc6, type: 3}
+  m_Script: {fileID: 11500000, guid: 4beff1f3854051046b32969cd1816329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &157795106965564307

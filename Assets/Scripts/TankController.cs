@@ -72,14 +72,20 @@ public class TankController : MonoBehaviour
         if (bullet == null) return;
         StartCoroutine(Death());
     }
+    void OnTriggerEnter(Collider c)
+    {
+        MineController mine = c.gameObject.GetComponentInParent<MineController>();
+        if (mine == null) return;
+        StartCoroutine(Death());
+    }
 
     IEnumerator Death()
     {
         ParticleManager.Play("TankExplode", transform.position);
         Spawner.Spawn("DeathX", transform.position);
         AudioManager.PlayVaried("Explosion");
-        yield return new WaitForSeconds(0.2f);
         gameObject.SetActive(false);
         GameManager.TankDestroyed(tank);
+        yield return new WaitForSeconds(0.2f);
     }
 }

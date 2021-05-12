@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController player;
+    public int maxMines = 6;
+    public int mines = 0;
     public string xAxis = "Horizontal";
     public string yAxis = "Vertical";
     CharacterMotor motor;
@@ -38,9 +40,23 @@ public class PlayerController : MonoBehaviour
         Vector3 dir = new Vector3(diff.x,0,diff.y).normalized;
         motor.lookDir = dir;
         bool shouldFire = Input.GetMouseButtonDown(0);
+        if (Input.GetMouseButtonDown(1)) 
+        {
+            SetMine();
+        }
         for (int i = 0;i < guns.Length; i ++)
         {
             guns[i].shouldFire = shouldFire;
+        }
+    }
+
+    void SetMine()
+    {
+        if (mines < maxMines)
+        {
+            Spawner.Spawn("Mine", transform.position);
+            AudioManager.PlayVaried("beep_01");
+            mines ++;
         }
     }
 }

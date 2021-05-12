@@ -9,6 +9,7 @@ public class CharacterMotor : MonoBehaviour
     public Vector3 lookDir;
     public float speed = 10;
     public float turnSpeed = 10;
+    public float lookSpeed = 10;
     public float maxVelocityChange = 1;
     public Transform moveRoot;
     public Transform lookRoot;
@@ -27,7 +28,7 @@ public class CharacterMotor : MonoBehaviour
             lookRoot.forward = Vector3.Lerp(
                 lookRoot.forward,
                 lookDir,
-                Time.deltaTime * turnSpeed
+                Time.deltaTime * lookSpeed
             );
         }
         if (body.velocity.sqrMagnitude > 0.1f)
