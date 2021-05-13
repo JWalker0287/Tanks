@@ -213,7 +213,7 @@ MonoBehaviour:
   lookDir: {x: 0, y: 0, z: 0}
   speed: 1.5
   turnSpeed: 10
-  lookSpeed: 10
+  lookSpeed: 2
   maxVelocityChange: 1
   moveRoot: {fileID: 2974619172612712930}
   lookRoot: {fileID: 4682866339377308022}
@@ -246,6 +246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4beff1f3854051046b32969cd1816329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  avoidWeight: 2
+  pathWeight: 1
+  updateInterval: 1
 --- !u!114 &5070057826327305581
 MonoBehaviour:
   m_ObjectHideFlags: 0

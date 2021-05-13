@@ -68,7 +68,7 @@ MonoBehaviour:
   lookDir: {x: 0, y: 0, z: 0}
   speed: 0
   turnSpeed: 3
-  lookSpeed: 10
+  lookSpeed: 2
   maxVelocityChange: 1
   moveRoot: {fileID: 2641107813673824786}
   lookRoot: {fileID: 5556320366694709894}
